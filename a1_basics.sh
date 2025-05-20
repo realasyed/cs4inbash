@@ -57,17 +57,21 @@ function better_differ_by_one {
 # def Ascending(x, y, z):
 #   return x<y<z
 
+# From here on out I am going to add a --help option.
 function ascending {
-
-    echo "Returns 'true' if provided positional arguments are in ascending order."
-
-    # To make things more similar to the Python program.
-    local x=${1}
-    local y=${2}
-    local z=${3}
-
-    if [[ $((x < y < z)) -eq 1 ]]; then # This does not work. Find out why.
-        echo "true"; else
-        echo "false"
-    fi
+    
+    if [[ ${1} == "--help" || ${1} == "-h" ]]; then 
+        echo "Returns 'true' if provided positional arguments are in ascending order. Returns 'false' otherwise."
+    else
+        # To make things more similar to the Python program.
+        local x=${1}
+        local y=${2}
+        local z=${3}
+        # [[ $((x < y < z)) -eq 1 ]] does not work because Bash treats it like
+        # ((x < y) < z). This is intended to mirror C or something.
+        if (( x < y && y < z )); then
+            echo "true"; else
+            echo "false"
+        fi
+    fi 
 }
