@@ -25,7 +25,7 @@ function differ_by_one {
 
     local result=$((${1}-${2}))
 
-    if [[ "${result:0:1}" == "-" ]]; then
+    if [[ "${result:0:1}" == "-" ]]; then # ${input:step:length}
         local abs_result=${result#"-"}
         if [[ ${abs_result} == "1" ]]; then
             echo "true"; else
@@ -95,5 +95,40 @@ function median {
         elif (( y <= x && x <= x )); then echo ${x};
         else echo ${z}
         fi 
+    fi
+}
+
+# Last one! In the original assignment, I had to take an input and then round
+# it to the nearest integer. I don't think Bash can work with floats anyways?
+# I might just make something that rounds to the nearest ten.
+
+# Okay, there HAS to be a better way...
+
+function round {
+    input=${1}
+    rounded=''
+
+    if [[ ${1} == "--help" || ${1} == "-h" ]]; then 
+        echo "Rounds the provided parameter to the nearest ten."
+    else
+        if [[ ${input} -ge 0 ]]; then
+            if [[ ${input: -1} -ge 5 ]]; then
+                rounded=$((${input} + (10 - ${input: -1})))
+                echo ${rounded}
+            else
+                rounded=$((${input} - ${input: -1}))
+                echo ${rounded}
+            fi
+        else
+            if [[ ${input} -lt 0 ]]; then
+                if [[ ${input: -1} -ge 5 ]]; then
+                    rounded=$((${input} - (10 - ${input: -1})))
+                    echo ${rounded}
+                else
+                    rounded=$((${input} + ${input: -1}))
+                    echo ${rounded}
+                fi
+            fi
+        fi
     fi
 }
