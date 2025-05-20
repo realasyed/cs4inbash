@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Important: the formatting will be very inconsistent;
+# I am trying to figure out how I like to format things.
+
 # In the original assignment, I had to make a function
 # that returned `True` if x and y differed by one.
 # First, though, it is worth noting how you use
@@ -74,4 +77,23 @@ function ascending {
             echo "false"
         fi
     fi 
+}
+
+function median {
+    if [[ ${1} == "--help" || ${1} == "-h" ]]; then 
+        echo "Returns the median of provided positional arguments."
+    else
+        local x=${1}
+        local y=${2}
+        local z=${3}
+        local med=''
+
+        # I will revisit this once I figure out a better way.
+        # I think there is a case command or something?
+        # Also, like Python, this works with letters.
+        if (( x <= y && y <= z )); then echo ${y};
+        elif (( y <= x && x <= x )); then echo ${x};
+        else echo ${z}
+        fi 
+    fi
 }
