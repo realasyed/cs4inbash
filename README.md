@@ -1,5 +1,3 @@
-# README File
-
 ## Usage
 
 To use the functions in these scripts you have to run `source whatever_script.sh`. You can (but maybe should not) place
