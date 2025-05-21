@@ -7,7 +7,7 @@
 
 # Helper function adapted from https://gist.github.com/CMCDragonkai/f1ed5e0676e53945429b
 
-function _typecheck {
+function _type_check {
     if [[ "$(declare -p ${1})" =~ "declare --" ]]; then echo "string"
     elif [[ "$(declare -p ${1})" =~ "declare -a" ]]; then echo "array"
     else echo "Error: function only takes strings or arrays."; return 1
@@ -30,9 +30,9 @@ function _typecheck {
 # `||` runs the right bit iff the left bit fails? Doesn't seem very inclusive.
 # Regardless, `||` is the inclusive OR.
 
-function checkends {
+function check_ends {
     local input_name=${1}
-    local var_type="$(_typecheck "${input_name}")"
+    local var_type="$(_type_check "${input_name}")"
     declare -n input_content=${input_name}
     if [[ "${var_type}" == "array" ]]; then
         [[ "${input_content[0]}" == "${input_content[-1]}" ]] && echo "true" || echo "false"
@@ -57,5 +57,12 @@ function checkends {
 # use a "C-style for loop" for this task. I am somewhat familiar with these, so
 # this should not be too hard.
 
-function word_scramble {
-    for 
+# I am going to use two helper functions here. The main reason is that I can get
+# a cleaner main function this way. Also, I think I like Bash because it is
+# stupid like me. If I were a programming language I would be Bash.
+
+function _every_other_letter {
+    local input=${1}
+    local result="" # I think I have to initialize this?
+    for (( l = 0 ; l < ${#input} ; l += 2 )); do
+        
