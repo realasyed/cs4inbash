@@ -14,12 +14,11 @@ lessons from my CS class were about OOP, which Bash does not seem to support. I'
 
 Here is a list of resources that I have found helpful so far:
 
-- The `man` pages.
-- The `info` pages.
-- [W3 Schools](https://www.w3schools.com/bash/index.php).
-
-These are the sources that I keep on going back to; I may add more to this list.
+- The `info bash` command and its various sub-pages.
+- [W3 Schools](https://www.w3schools.com/bash/index.php) and [Phoenix NAP](https://phoenixnap.com/) for syntax help. 
+- [Redowan's Reflections](https://rednafi.com/misc/bash_namerefs/) for understanding namerefs and the `declare` command.
 
 ## Note on AI
 
-**None** of the code in this repository is (or will ever be) AI generated; you do not learn to cook by ordering takeout.
+**None** of the code in this repository is (or will ever be) intentionally AI generated; you do not learn to cook by
+ordering takeout.
