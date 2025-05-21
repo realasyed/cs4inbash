@@ -52,4 +52,10 @@ function checkends {
 # other letter starting from the second one. This took me five lines of code in
 # Python. It feels like Bash should have tools for this.
 
+# Okay, I did some reasearch and nope, Python is still more concise. I love Bash,
+# but wow, it can be a little tedious at times. From what I can tell, I have to
+# use a "C-style for loop" for this task. I am somewhat familiar with these, so
+# this should not be too hard.
 
+function word_scramble {
+    for 
