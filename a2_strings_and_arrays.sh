@@ -23,6 +23,11 @@ function _typecheck {
 # To get the actual content of `input_name` (which is the content of `${1}`) I
 # need to use a nameref. Apparently, there are two ways to do this: `eval` and
 # `declare -n`. The latter is safer for some reason. It also looks better. 
+# Now, when I operate on the nameref, I access the contents of `${1}`.
+# I still need to look into this though. Anyways, `&&` is weird because it runs
+# the bit on the right of it iff the bit on the left runs successfully. I think
+# `||` runs the right bit iff the left bit fails? Doesn't seem very inclusive.
+# Regardless, `||` is the inclusive OR.
 function checkends {
     local input_name=${1}
     local var_type="$(_typecheck "${input_name}")"
