@@ -6,6 +6,7 @@
 # this is two lines of code.
 
 # Helper function adapted from https://gist.github.com/CMCDragonkai/f1ed5e0676e53945429b
+
 function _typecheck {
     if [[ "$(declare -p ${1})" =~ "declare --" ]]; then echo "string"
     elif [[ "$(declare -p ${1})" =~ "declare -a" ]]; then echo "array"
@@ -28,6 +29,7 @@ function _typecheck {
 # the bit on the right of it iff the bit on the left runs successfully. I think
 # `||` runs the right bit iff the left bit fails? Doesn't seem very inclusive.
 # Regardless, `||` is the inclusive OR.
+
 function checkends {
     local input_name=${1}
     local var_type="$(_typecheck "${input_name}")"
@@ -43,3 +45,11 @@ function checkends {
         return 1
     fi
 }
+
+# Next function! In the og assignment, I had to make a function `WordScramble(S)`
+# that takes a word `S` and returns a string where the first half comprised every
+# other letter starting from the first one and the second half comprised every
+# other letter starting from the second one. This took me five lines of code in
+# Python. It feels like Bash should have tools for this.
+
+
