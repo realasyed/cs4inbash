@@ -1,7 +1,8 @@
 ## Usage
 
 To use the functions in these scripts you have to run `source whatever_script.sh`. You can (but maybe should not) place
-that line in your `.bashrc` file, which would let you use these functions whenever you want. 
+that line in your `.bashrc` file, which would let you use these functions whenever you want. I don't think you should
+`chmod +x` any of these scripts unless you know what you are doing.
 
 ## Purpose
 
