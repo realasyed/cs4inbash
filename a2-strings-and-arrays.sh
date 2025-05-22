@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# $ [[ "${SHELL}" > "${YOUR_LANG}" ]] && echo "true" || echo "false"
+# true
+
 # In the original problem I had to make a function that checked to see if an
 # array or list had identical first and last items. Afaik, Bash does not have
 # a super clean way to check types, so I need a helper function. In Python,
@@ -63,6 +66,9 @@ function check_ends {
 
 function _every_other_letter {
     local input=${1}
-    local result="" # I think I have to initialize this?
+    local result=""
     for (( l = 0 ; l < ${#input} ; l += 2 )); do
-        
+        result+=${input:${l}:1}
+    done
+    echo "${result}"
+}
