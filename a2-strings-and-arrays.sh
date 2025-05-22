@@ -41,7 +41,7 @@ function check_ends {
         [[ "${input_content:0:1}" == "${input_content: -1}" ]] && echo "true" || echo "false"
         return 0
     else
-        echo "Error: parameter must be string or array. I mean it doesn't have to be but come on bro."
+        echo "Error: parameter must be string or array. I mean it doesn't have to be I guess... :c"
         return 1
     fi
 }
