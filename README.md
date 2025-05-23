@@ -1,3 +1,8 @@
+## File Naming Scheme
+
+I name files after their original assignment number and content. For example, if the seventh assignment was about list
+comprehensions, I would title my Bash translation `a7-list-comprehensions.sh`. 
+
 ## Usage
 
 To use the functions in these scripts you have to run `source whatever_script.sh`. You can (but maybe should not) place
