@@ -4,7 +4,7 @@ To use the functions in these scripts you have to run `source whatever_script.sh
 that line in your `.bashrc` file, which would let you use these functions whenever you want. I don't think you should
 `chmod +x` any of these scripts unless you know what you are doing. If you run the scripts themselves rather than
 functions in the scripts, I don't think anything would happen. Although, I don't know what I am doing, so this could
-also break things. In essence, be careful c:
+also break things.
 
 ## Purpose
 
