@@ -70,5 +70,19 @@ function _every_other_letter {
     for (( l = 0 ; l < ${#input} ; l += 2 )); do
         result+=${input:${l}:1}
     done
-    echo "${result}"
+    printf "${result}"
 }
+
+function _every_other_other_letter {
+    local input=${1}
+    local result=""
+    for (( l = 1 ; l < ${#input} ; l += 2 )); do
+        result+=${input:${l}:1}
+    done
+    printf "${result}"
+}
+
+function word_scramble {
+    echo "$(_every_other_letter ${1} && _every_other_other_letter ${1})"
+    return 0
+} 
