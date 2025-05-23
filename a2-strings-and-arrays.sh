@@ -100,4 +100,5 @@ function word_scramble {
 
 function flip_side {
     echo "${1:$(( (${#1} / 2 ))):$(( (${#1} / 2) + 1 ))}${1:0:$(( ${#1} / 2 ))}"
+    return 0
 }
