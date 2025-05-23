@@ -5,7 +5,7 @@ comprehensions, I would title my Bash translation `a7-list-comprehensions.sh`.
 
 ## Usage
 
-To use the functions in these scripts you have to run `source whatever_script.sh`. You can (but maybe should not) place
+To use the functions in these scripts you have to run `source whatever-script.sh`. You can (but maybe should not) place
 that line in your `.bashrc` file, which would let you use these functions whenever you want. I don't think you should
 `chmod +x` any of these scripts unless you know what you are doing. If you run the scripts themselves rather than
 functions in the scripts, I don't think anything would happen. Although, I don't know what I am doing, so this could
@@ -15,7 +15,7 @@ also break things.
 
 I love Linux and Bash, and I think recreating all of my CS4 assignments in the latter would be a good way to learn it.
 I do not intend for these scripts to be very polished; I am learning as I go. However, if I learn of optimizations, I
-may include a new function with a name like  `better_[FUNCTION NAME]`. I might not recreate everything, as some of the
+may include a new function with a name like  `better-[FUNCTION NAME]`. I might not recreate everything, as some of the
 lessons from my CS class were about OOP, which Bash does not seem to support. I'll cross this bridge when I get to it.
 Also, it is worth emphasizing that the original assignments were in Python, not Bash, so I don't think this would be
 useful for cheaters.
