@@ -86,3 +86,18 @@ function word_scramble {
     echo "$(_every_other_letter ${1} && _every_other_other_letter ${1})"
     return 0
 } 
+
+# For this next problem, I had to make a function `FlipSide(W)` that took a
+# string `W` and swapped the first and last side of that string. So, for
+# instance, 'Word' would become 'rdWo'. If `len(W)` was odd, I had to round down
+# to the nearest `int`. Thankfully, this is the default behavior in Bash. This
+# might be the first Bash function I make that is as concise as a Python
+# function! In Python, this took me 6 lines of code, but likely could have been
+# done in 2 with less intermediary variables.
+
+# Reminder: `${INPUT:OFFSET:LENGTH}`. Set `LENGTH` to ` -N` for negative
+# indexing.
+
+function flip_side {
+    echo "${1:$(( (${#1} / 2 ))):$(( (${#1} / 2) + 1 ))}${1:0:$(( ${#1} / 2 ))}"
+}
