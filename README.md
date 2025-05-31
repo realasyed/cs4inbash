@@ -1,6 +1,6 @@
 ## Project Status
 
-I am currently trying to learn C, which (for now, at least) is more interesting to me. Consequently, I will probably
+I am currently trying to learn Rust, which (for now, at least) is more interesting to me. Consequently, I will probably
 not touch this repo for a while. I do still love Bash though, so I'll probably come back. 
 
 ## File Naming Scheme
